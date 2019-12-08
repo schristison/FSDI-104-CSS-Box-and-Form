@@ -14,9 +14,8 @@ class Character{
 
 display = function(){
     document.getElementById(this.id).innerHTML=`<p> Name: ${this.name} </p> <p> Energy: ${this.energy} </p>`;
-    
-    
-}
+        
+    }
 
     attack = function(opponent,item){
         let newEnergy = opponent.energy - item.iHitPoints;
@@ -27,16 +26,13 @@ display = function(){
         //print game over on the HTML console when energy = 0
         if(opponent.energy <= 0){
 
-            document.getElementById(opponent.id).innerHTML = "<p> I'm Dead!!!</P>";
-            document.getElementById("console").innerHTML=`<p>Game Over!!! Play Again? Then click the Restart button!</p>`;   
-            
-                                      
-        }
+            document.getElementById(opponent.id).innerHTML = "<p> I'm Dead!!!</P>";  
+            document.getElementById("console").innerHTML=`<p>I lost!</p>`;
+            /* document.getElementById("console").innerHTML=`<p>Game Over!!! Play Again? Then click the Restart button!</p>`;    */
+        }        
               
-       
-               
-    }
-   
+    }                
+      
 
 }
 
@@ -73,8 +69,6 @@ console.log(selectItem());
 
 //reset function  ---- global
     
-    /* const restartEnergy = restart.innerHTML;
-    restart.innerHTML = restartEnergy;      */  
     const restart = function(){ 
    
     document.location.reload();
